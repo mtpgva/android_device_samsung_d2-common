@@ -75,6 +75,14 @@ PRODUCT_PACKAGES += \
     Tag \
     com.android.nfc_extras
 
+# Recovery
+		ifeq ($(TARGET_RECOVERY),twrp)
+		PRODUCT_COPY_FILES += \
+		    device/samsung/d2-common/twrp.fstab:recovery/root/etc/twrp.fstab
+		endif
+
+
+
 ifeq ($(TARGET_BUILD_VARIANT),user)
     NFCEE_ACCESS_PATH := $(LOCAL_PATH)/configs/nfcee_access.xml
 else
