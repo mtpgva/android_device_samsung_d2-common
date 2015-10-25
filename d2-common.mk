@@ -26,3 +26,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from d2-common device
 $(call inherit-product, device/samsung/d2-common/device.mk)
+
+# Recovery
+ifeq ($(TARGET_RECOVERY),twrp)
+PRODUCT_COPY_FILES += \
+    device/samsung/d2-common/twrp.fstab:recovery/root/etc/twrp.fstab
+endif
