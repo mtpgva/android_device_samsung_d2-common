@@ -76,10 +76,10 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras
 
 # Recovery
-		ifeq ($(TARGET_RECOVERY),twrp)
-		PRODUCT_COPY_FILES += \
-		    device/samsung/d2-common/twrp.fstab:recovery/root/etc/twrp.fstab
-		endif
+ifeq ($(TARGET_RECOVERY),twrp)
+PRODUCT_COPY_FILES += \
+		device/samsung/d2-common/twrp.fstab:recovery/root/etc/twrp.fstab
+endif
 
 
 
